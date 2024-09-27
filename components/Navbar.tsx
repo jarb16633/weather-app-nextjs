@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 import { github } from "@/utils/Icons";
+import SearchModal from "./SearchModal";
 
 type Props = {};
 
@@ -19,20 +20,23 @@ const Navbar = (props: Props) => {
     e.preventDefault();
 
     if (path === "/github") {
-      router.push("github.com/jarb16633");
+      router.push("https://github.com/jarb16633/weather-app-nextjs");
     }
   };
   return (
     <div className="w-full py-4 flex items-center justify-between">
       <div className="left"></div>
       <div className="search-container flex shrink-0 w-full gap-2 sm:w-fit">
-        <ModeToggle />
-        <Button
-          className="source-code flex items-center gap-2"
-          onClick={(e) => handleClick({ e, path: "/github" })}
-        >
-          {github} Source code
-        </Button>
+        <SearchModal />
+        <div className="btn-group flex items-center gap-2">
+          <ModeToggle />
+          <Button
+            className="source-code flex items-center gap-2"
+            onClick={(e) => handleClick({ e, path: "/github" })}
+          >
+            {github} Source code
+          </Button>
+        </div>
       </div>
     </div>
   );
