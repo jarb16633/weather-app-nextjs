@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 import { github } from "@/utils/Icons";
-import SearchModal from "./SearchModal";
+import SearchDialog from "./SearchDialog";
 
 type Props = {};
 
@@ -27,7 +27,7 @@ const Navbar = (props: Props) => {
     <div className="w-full py-4 flex items-center justify-between">
       <div className="left"></div>
       <div className="search-container flex shrink-0 w-full gap-2 sm:w-fit">
-        <SearchModal />
+        <SearchDialog />
         <div className="btn-group flex items-center gap-2">
           <ModeToggle />
           <Button
