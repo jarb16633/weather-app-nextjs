@@ -5,6 +5,7 @@ import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 import { github } from "@/utils/Icons";
 import SearchDialog from "./SearchDialog";
+import { useGlobalContext } from "@/app/context/globalContext";
 
 type Props = {};
 
@@ -15,6 +16,9 @@ interface HandleClickParams {
 
 const Navbar = (props: Props) => {
   const router = useRouter();
+  const { state } = useGlobalContext();
+
+  console.log(state);
 
   const handleClick = ({ e, path }: HandleClickParams) => {
     e.preventDefault();
