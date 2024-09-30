@@ -54,7 +54,7 @@ const Temperature = (props: Props) => {
         <span className="font-medium">{currentDay}</span>
         <span className="font-medium">{localTime}</span>
       </p>
-      <p className="pt-2 font-bold text-xl flex gap-1">
+      <p className="pt-2 font-bold text-xl flex gap-1 items-center">
         <span>{name}</span>
         <span>{navigation}</span>
       </p>
