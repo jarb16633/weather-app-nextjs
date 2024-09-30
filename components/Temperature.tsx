@@ -1,6 +1,6 @@
 "use client";
 import { useGlobalContext } from "@/app/context/globalContext";
-import { clearSky, cloudy, drizzleIcon, rain, snow } from "@/utils/Icons";
+import { navigation } from "@/utils/Icons";
 import { kelvinToCelsius } from "@/utils/misc";
 import React, { useState } from "react";
 
@@ -17,7 +17,7 @@ const Temperature = (props: Props) => {
   console.log(kelvinToCelsius(main.temp));
 
   const temp = kelvinToCelsius(main?.temp);
-  const mintemp = kelvinToCelsius(main?.temp_min);
+  const minTemp = kelvinToCelsius(main?.temp_min);
   const maxTemp = kelvinToCelsius(main?.temp_max);
 
   // State
@@ -32,11 +32,26 @@ const Temperature = (props: Props) => {
   };
 
   return (
-    <div className="pt-6 pb-5 border rounded-lg flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
+    <div className="pt-6 pb-5 px-6 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
       <p className="flex justify-between items-center">
         <span className="font-medium">{currentDay}</span>
         <span className="font-medium">{localTime}</span>
       </p>
+      <p className="pt-2 font-bold flex gap-1">
+        <span>{name}</span>
+        <span>{navigation}</span>
+      </p>
+      <p className="py-10 text-9xl font-bold self-center">{temp}°</p>
+      <div>
+        <div className="">
+          <img src={getIcon()} alt={description} />
+          <p className="pt-2 capitalize text-lg font-medium">{description}</p>
+        </div>
+        <p>
+          <span>Low: {minTemp}°</span>
+          <span>High: {maxTemp}°</span>
+        </p>
+      </div>
     </div>
   );
 };
