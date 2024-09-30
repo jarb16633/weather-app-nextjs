@@ -49,29 +49,35 @@ const Temperature = (props: Props) => {
   }, []);
 
   return (
-    <div className="pt-6 pb-5 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
-      <p className="flex justify-between items-center">
+    <div className="pt-6 pb-5 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none h-auto">
+      <p className="flex justify-between items-center text-sm sm:text-base">
         <span className="font-medium">{currentDay}</span>
         <span className="font-medium">{localTime}</span>
       </p>
-      <p className="pt-2 font-bold text-xl flex gap-1 items-center">
+      <p className="pt-2 font-bold text-lg sm:text-xl md:text-2xl flex gap-1 items-center">
         <span>{name}</span>
         <span>{navigation}</span>
       </p>
-      <div className="flex flex-row items-center w-full">
-        <img src={getIcon()} alt={description} />
-        <div className="py-10 text-9xl font-bold">
+      <div className="flex flex-row items-center justify-center">
+        <img
+          src={getIcon()}
+          alt={description}
+          className="w-24 sm:w-32 md:w-40"
+        />
+        <p className="py-4 sm:py-6 md:py-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           {temp}°
-          <span className="font-bold text-4xl text-gray-500 relative mx-[-38px]">
+          <span className="font-bold text-xl sm:text-2xl md:text-3xl text-gray-500 relative">
             C
           </span>
-        </div>
+        </p>
       </div>
       <div>
         <div>
-          <p className="pt-2 capitalize text-lg font-medium">{description}</p>
+          <p className="pt-2 capitalize text-base sm:text-lg md:text-xl font-medium">
+            {description}
+          </p>
         </div>
-        <p>
+        <p className="text-sm sm:text-base">
           <span>Low: {minTemp}° </span>
           <span>High: {maxTemp}°</span>
         </p>

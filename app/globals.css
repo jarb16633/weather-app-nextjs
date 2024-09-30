@@ -76,3 +76,21 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  html {
+    font-size: 14px;
+  }
+  
+  @screen sm {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  @screen lg {
+    html {
+      font-size: 18px;
+    }
+  }
+}

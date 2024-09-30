@@ -28,11 +28,21 @@ const AirPollution = (props: Props) => {
   //   })
 
   return (
-    <div className="air-pollution pt-6 px-4 h-full border rounded-xl flex flex-col gap-8 dark:bg-dark-grey shadow-sm dark:shadow-none">
-      <h2 className="flex items-center gap-2 font-medium">
+    <div className="air-pollution pt-6 px-4 h-full border rounded-xl flex flex-col gap-4 sm:gap-6 md:gap-8 dark:bg-dark-grey shadow-sm dark:shadow-none">
+      <h2 className="flex items-center gap-2 font-medium text-lg sm:text-xl md:text-2xl">
         {thermo}Air Pollution
       </h2>
-      <p>Air Quality is</p>
+      <p className="text-base sm:text-lg">
+        Air Quality Index: {airQualityIndex}
+      </p>
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="w-full sm:w-1/2">
+          {/* ใส่ข้อมูลเพิ่มเติมหรือกราฟิกแสดงคุณภาพอากาศ */}
+        </div>
+        <div className="w-full sm:w-1/2">
+          {/* ใส่ข้อมูลเพิ่มเติมหรือคำแนะนำ */}
+        </div>
+      </div>
     </div>
   );
 };
