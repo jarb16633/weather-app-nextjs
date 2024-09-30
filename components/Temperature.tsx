@@ -4,6 +4,7 @@ import { navigation } from "@/utils/Icons";
 import { kelvinToCelsius } from "@/utils/misc";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
+import { Skeleton } from "./ui/skeleton";
 
 type Props = {};
 
@@ -11,13 +12,11 @@ const Temperature = (props: Props) => {
   const { forecast } = useGlobalContext();
   const { main, timezone, name, weather } = forecast;
 
-  console.log(timezone);
-
   if (!forecast || !weather) {
-    return <div>Loading...</div>;
+    return <Skeleton />;
   }
 
-  console.log(kelvinToCelsius(main.temp));
+  // console.log(kelvinToCelsius(main.temp));
 
   const temp = kelvinToCelsius(main?.temp);
   const minTemp = kelvinToCelsius(main?.temp_min);
@@ -55,22 +54,18 @@ const Temperature = (props: Props) => {
         <span className="font-medium">{currentDay}</span>
         <span className="font-medium">{localTime}</span>
       </p>
-      <p className="pt-2 font-bold text-xl flex gap-1 items-center">
+      <p className="pt-2 font-bold text-xl flex gap-1">
         <span>{name}</span>
         <span>{navigation}</span>
       </p>
-      <div className="flex flex-row justify-items-start align-middle">
-        <img
-          src={getIcon()}
-          alt={description}
-          className="object-contain h-50 w-50"
-        />
-        <p className="py-10 text-9xl font-bold">
+      <div className="flex flex-row items-center w-full">
+        <img src={getIcon()} alt={description} />
+        <div className="py-10 text-9xl font-bold">
           {temp}°
           <span className="font-bold text-4xl text-gray-500 relative mx-[-38px]">
             C
           </span>
-        </p>
+        </div>
       </div>
       <div>
         <div>
