@@ -1,5 +1,11 @@
+import moment from "moment";
+
 export const kelvinToCelsius = (kelvin: number) => {
   return Math.round(kelvin - 273.15);
+};
+
+export const unixToDay = (unix: number) => {
+  return moment(unix).format("ddd");
 };
 
 export const airQualityIndexText = [

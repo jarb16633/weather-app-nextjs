@@ -78,8 +78,12 @@ const Temperature = (props: Props) => {
           {description}
         </p>
         <p className="text-sm sm:text-base">
-          <span>Low: {minTemp}° </span>
-          <span>High: {maxTemp}°</span>
+          <span>
+            <strong>Low</strong>: {minTemp}°{" "}
+          </span>
+          <span>
+            <strong>High</strong>: {maxTemp}°
+          </span>
         </p>
       </div>
     </div>
