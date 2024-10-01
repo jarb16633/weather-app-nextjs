@@ -27,11 +27,11 @@ const AirPollution = (props: Props) => {
   const airQualityEvaluation = evaluateAirQuality(airQualityIndex);
 
   return (
-    <div className="h-full pt-2 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
+    <div className="h-full flexpt-2 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
       <h2 className="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl">
         {wind} Air Pollution
       </h2>
-      <div className="flex-grow flex flex-col justify-center py-2">
+      <div className="flex flex-col justify-center py-2">
         <Progress value={airQualityIndex * 20} max={100} className="mb-2" />
         <p className="text-base sm:text-lg">
           Air Quality: {airQualityEvaluation.text}

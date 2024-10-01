@@ -48,13 +48,13 @@ const FiveDayForecast = (props: Props) => {
   }
 
   return (
-    <div>
+    <div className="pt-6 pb-5 px-4 flex-1 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
       <div>
         <h2 className="flex items-center gap-2 font-medium">
           {calender} 5-Day Forecast for {city.name}
         </h2>
 
-        <div>
+        <div className="pt-3">
           {dailyForecasts.map((day, i) => {
             return (
               <div
@@ -66,7 +66,7 @@ const FiveDayForecast = (props: Props) => {
                   <span>(low)</span>
                   <span>(high)</span>
                 </p>
-                <div>
+                <div className="flex-1 flex items-center justify-between gap-4">
                   <p className="font-bold">{day.minTemp}°C</p>
                   <div className="flex-1 w-full h-2 rounded-lg"></div>
                   <p className="font-bold">{day.maxTemp}°C</p>
