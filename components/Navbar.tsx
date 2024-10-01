@@ -35,10 +35,10 @@ const Navbar = (props: Props) => {
         <div className="btn-group flex items-center gap-2">
           <ModeToggle />
           <Button
-            className="source-code flex items-center gap-2"
+            className="source-code items-center gap-2 sm:flex"
             onClick={(e) => handleClick({ e, path: "/github" })}
           >
-            {github} Source code
+            {github} <span className="hidden md:inline">Source code</span>
           </Button>
         </div>
       </div>
