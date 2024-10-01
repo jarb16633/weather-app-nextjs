@@ -60,7 +60,7 @@ const Temperature = (props: Props) => {
           <span>{navigation}</span>
         </p>
       </div>
-      <div className="flex flex-col items-center justify-center flex-grow">
+      <div className="flex flex-row items-center justify-center flex-grow">
         <img
           src={getIcon()}
           alt={description}
