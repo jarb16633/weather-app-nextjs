@@ -41,10 +41,10 @@ export const GlobalContextProvider = ({ children }) => {
   const fetchFiveDayForecast = async () => {
     try {
       const res = await axios.get("api/fiveday");
-      console.log(res.data);
+      console.log("Five Day Forecast Data:", res.data);
       setFiveDayForecast(res.data);
     } catch (error) {
-      console.log("Error fetching five day forcast data: ", error.message);
+      console.error("Error fetching five day forecast data: ", error.message);
     }
   };
   useEffect(() => {
