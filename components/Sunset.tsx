@@ -17,18 +17,20 @@ const Sunset = (props: Props) => {
   const times = forecast?.sys?.sunset;
   const timezone = forecast?.timezone;
 
+  if (!times || !timezone) return <Skeleton className="h-[12rem] w-full" />;
+
   const sunsetTime = unixToTime(times, timezone);
   const sunriseTime = unixToTime(forecast?.sys?.sunrise, timezone);
 
   return (
     <div className="h-full pt-2 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
-      <div>
-        <h2 className="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl">
-          {sunset} Sunset
-        </h2>
-        <p className="pt-4 text-2xl font-bold">{sunsetTime}</p>
+      <div className="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl">
+        <h2>{sunset} Sunset</h2>
       </div>
-      <p className="text-sm sm:text-base">Sunrise: {sunriseTime}</p>
+      <div className="pb-4">
+        <p className="text-2xl font-bold">{sunsetTime}</p>
+        <p className="text-sm sm:text-base">Sunrise: {sunriseTime}</p>
+      </div>
     </div>
   );
 };

@@ -60,15 +60,15 @@ const Temperature = (props: Props) => {
           <span>{navigation}</span>
         </p>
       </div>
-      <div className="flex flex-row items-center justify-center flex-grow">
+      <div className="flex sm:flex-row items-center justify-center flex-grow">
         <img
           src={getIcon()}
           alt={description}
-          className="w-24 sm:w-32 md:w-40"
+          className="w-26 sm:w-30 md:w-28 lg:w-26"
         />
-        <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-2 sm:mt-0">
           {temp}°
-          <span className="font-bold text-xl sm:text-2xl md:text-3xl text-gray-500 relative">
+          <span className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 relative">
             C
           </span>
         </p>
