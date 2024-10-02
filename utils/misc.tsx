@@ -5,7 +5,7 @@ export const kelvinToCelsius = (kelvin: number) => {
 };
 
 export const unixToDay = (unix: number) => {
-  return moment(unix).format("ddd");
+  return moment.unix(unix).format("ddd");
 };
 
 export const airQualityIndexText = [

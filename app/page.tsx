@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="mx-[1rem] lg:mx-[2rem] xl:mx-[6rem] 2xl:mx-[16rem] m-auto">
       <Navbar />
-      <div className="pb-4 pt-4 flex flex-col gap-2 sm:flex-row">
+      <div className="pb-2 pt-2 flex flex-col gap-2 sm:flex-row">
         <div className="w-full sm:w-[37%]">
           <Temperature />
         </div>
@@ -21,8 +21,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-4">
-        <FiveDayForecast />
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="w-full sm:w-[37%]">
+          <FiveDayForecast />
+        </div>
+        <div className="w-full sm:w-[63%] grid grid-rows-3 gap-2">
+          <AirPollution />
+        </div>
       </div>
     </main>
   );

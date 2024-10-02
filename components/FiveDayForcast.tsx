@@ -24,17 +24,18 @@ const FiveDayForecast = (props: Props) => {
   ) => {
     let minTemp = Number.MAX_VALUE;
     let maxTemp = Number.MIN_VALUE;
-    let dailyDataArray = [];
 
-    dailyData.forEach(
-      (day: { main: { temp_min: number; temp_max: number }; dt: number }) => {
-        if (day.main.temp_min < minTemp) minTemp = day.main.temp_min;
-        if (day.main.temp_max > maxTemp) maxTemp = day.main.temp_max;
-      }
-    );
+    dailyData.forEach((day) => {
+      if (day.main.temp_min < minTemp) minTemp = day.main.temp_min;
+      if (day.main.temp_max > maxTemp) maxTemp = day.main.temp_max;
+    });
+
+    // Use the timestamp from the middle of the day (noon) for more accurate day representation
+    const middleIndex = Math.floor(dailyData.length / 2);
+    const dayTimestamp = dailyData[middleIndex].dt;
 
     return {
-      day: unixToDay(dailyData[0].dt),
+      day: unixToDay(dayTimestamp),
       minTemp: kelvinToCelsius(minTemp),
       maxTemp: kelvinToCelsius(maxTemp),
     };
@@ -42,8 +43,8 @@ const FiveDayForecast = (props: Props) => {
 
   const dailyForecasts = [];
 
-  for (let i = 0; i < 40; i += 8) {
-    const dailyData = list.slice(i, i + 5);
+  for (let i = 0; i < list.length; i += 8) {
+    const dailyData = list.slice(i, i + 8);
     dailyForecasts.push(processData(dailyData));
   }
 
