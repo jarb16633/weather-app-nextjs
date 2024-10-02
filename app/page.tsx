@@ -2,6 +2,7 @@
 import AirPollution from "@/components/AirPollution";
 import FiveDayForecast from "@/components/FiveDayForcast";
 import Navbar from "@/components/Navbar";
+import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
             <AirPollution />
           </div>
           <div className="row-span-1">
-            <AirPollution />
+            <Sunset />
           </div>
         </div>
       </div>
