@@ -15,16 +15,15 @@ export default function Home() {
           <Temperature />
         </div>
         <div className="w-full md:w-[75%] grid grid-rows-2 grid-cols-3 gap-2">
-          <div className="row-span-1 col-span-1">
+          <div className="row-span-1 col-span-3">
             <AirPollution />
           </div>
           <div className="row-span-1 col-span-1">
             <Sunset />
           </div>
-          <div className="row-span-1 col-span-1">
+          <div className="col-span-1">
             <Wind />
           </div>
-          <div className="row-span-1"></div>
         </div>
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">
