@@ -28,7 +28,7 @@ const AirPollution = (props: Props) => {
 
   return (
     <div className="h-full pt-2 px-4 gap-2 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
-      <h2 className="flex items-center gap-2 font-medium text-base sm:text-lg md:text-xl">
+      <h2 className="flex items-center gap-2 font-medium text-base sm:text-base md:text-lg">
         {wind} Air Pollution
       </h2>
       <Progress value={airQualityIndex * 20} max={100} />

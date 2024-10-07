@@ -24,7 +24,7 @@ const Navbar = (props: Props) => {
     e.preventDefault();
 
     if (path === "/github") {
-      router.push("https://github.com/jarb16633/weather-app-nextjs");
+      window.open("https://github.com/jarb16633/weather-app-nextjs", "_blank");
     }
   };
   return (
