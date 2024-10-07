@@ -28,10 +28,24 @@ const Wind = (props: Props) => {
           <Image
             src="/compass_body.svg"
             alt="compass"
-            width={100}
-            height={100}
+            width={110}
+            height={110}
+          />
+          <Image
+            src="/compass_arrow.svg"
+            alt="compass"
+            className="absolute top-0 left-[50%] transition-all duration-500 ease-in-out dark:invert"
+            style={{
+              transform: `rotate(${windDirection}deg) translate(-50%)`,
+              height: "100%",
+            }}
+            width={11}
+            height={11}
           />
         </div>
+        <p className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-xs dark:text-white font-medium">
+          {Math.round(windSpeed)} m/s
+        </p>
       </div>
     </div>
   );
