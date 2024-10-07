@@ -14,8 +14,6 @@ const DailyForecast = (props: Props) => {
   const { weather } = forecast;
   const { city, list } = fiveDayForecast;
 
-  const temp = kelvinToCelsius(forecast.main.temp);
-
   if (!fiveDayForecast || !city || !list)
     return <Skeleton className="h-[12rem] w-full" />;
 
@@ -35,8 +33,7 @@ const DailyForecast = (props: Props) => {
 
   const { main: weatherMain } = weather[0];
 
-  const getIcon = () => {
-    const iconCode = weatherMain.icon;
+  const getIcon = (iconCode: string) => {
     return `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
   };
 
@@ -50,7 +47,11 @@ const DailyForecast = (props: Props) => {
             <Carousel>
               <CarouselContent>
                 {todayForecast.map(
-                  (forecast: { dt_txt: string; main: { temp: number } }) => {
+                  (forecast: {
+                    dt_txt: string;
+                    main: { temp: number };
+                    weather: [{ icon: string }];
+                  }) => {
                     return (
                       <CarouselItem
                         key={forecast.dt_txt}
@@ -59,7 +60,12 @@ const DailyForecast = (props: Props) => {
                         <p className="text-gray-300">
                           {moment(forecast.dt_txt).format("HH:mm")}
                         </p>
-                        {temp}°
+                        <img
+                          src={getIcon(forecast.weather[0].icon)}
+                          alt="weather icon"
+                          className="w-26 sm:w-30 md:w-28 lg:w-26"
+                        />
+                        {kelvinToCelsius(forecast.main.temp)}°
                       </CarouselItem>
                     );
                   }
