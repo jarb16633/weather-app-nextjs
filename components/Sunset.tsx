@@ -22,19 +22,20 @@ const Sunset = (props: Props) => {
   const sunriseTime = unixToTime(forecast?.sys?.sunrise, timezone);
 
   return (
-    <div className="h-full min-w-[150px] px-4 border rounded-xl flex justify-evenly items-center dark:bg-dark-grey shadow-sm dark:shadow-none">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4 w-full">
-        <div className="col-span-1">
-          <h2 className="flex flex-row text-center items-center text-xs justify-center gap-2 font-medium sm:justify-center sm:text-center md:text-base">
-            {sunset} Sunset
-          </h2>
-          <p className="text-2xl font-bold text-center">{sunsetTime}</p>
-        </div>
-        <div className="col-span-1">
-          <h2 className="flex flex-row text-center items-center text-xs justify-center gap-2 font-medium sm:justify-center sm:text-center md:text-base">
-            {sunrise} Sunrise
-          </h2>
-          <p className="text-2xl font-bold text-center">{sunriseTime}</p>
+    <div className="h-full w-full min-h-[10rem] pt-6 pb-5 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
+      <h2 className="flex items-center gap-2 font-medium">
+        {sunset} Sunset & Sunrise
+      </h2>
+      <div className="flex flex-col justify-center flex-grow">
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <p className="text-sm">Sunset</p>
+            <p className="text-2xl font-bold">{sunsetTime}</p>
+          </div>
+          <div>
+            <p className="text-sm">Sunrise</p>
+            <p className="text-2xl font-bold">{sunriseTime}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -15,23 +15,23 @@ export default function Home() {
         <div className="w-full md:w-[25%]">
           <Temperature />
         </div>
-        <div className="w-full md:w-[75%] grid grid-rows-2 grid-cols-4 gap-2">
-          <div className="col-span-2">
+        <div className="w-full md:w-[75%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+          <div className="col-span-1 sm:col-span-2">
             <AirPollution />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 flex">
             <Sunset />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 flex">
             <Wind />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <DailyForecast />
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">
-        <div className="w-full md:w-[25%]">
+        <div className="w-full sm:w-[25%]">
           <FiveDayForecast />
         </div>
         <div className="w-full sm:w-[75%] grid grid-rows-3 gap-2">
