@@ -1,5 +1,6 @@
 "use client";
 import AirPollution from "@/components/AirPollution";
+import DailyForecast from "@/components/DailyForecast";
 import FiveDayForecast from "@/components/FiveDayForcast";
 import Navbar from "@/components/Navbar";
 import Sunset from "@/components/Sunset";
@@ -14,15 +15,18 @@ export default function Home() {
         <div className="w-full md:w-[25%]">
           <Temperature />
         </div>
-        <div className="w-full md:w-[75%] grid grid-rows-2 grid-cols-3 gap-2">
-          <div className="row-span-1 col-span-3">
+        <div className="w-full md:w-[75%] grid grid-rows-2 grid-cols-4 gap-2">
+          <div className="col-span-2">
             <AirPollution />
           </div>
-          <div className="row-span-1 col-span-1">
+          <div className="col-span-1">
             <Sunset />
           </div>
           <div className="col-span-1">
             <Wind />
+          </div>
+          <div className="col-span-2">
+            <DailyForecast />
           </div>
         </div>
       </div>
