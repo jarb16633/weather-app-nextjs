@@ -11,9 +11,9 @@ import Wind from "@/components/Wind";
 
 export default function Home() {
   return (
-    <main className="mx-[1rem] lg:mx-[1rem] xl:mx-[2rem] 2xl:mx-[6rem] m-auto">
+    <main className="mx-[1rem] lg:mx-[1rem] xl:mx-[2rem] 2xl:mx-[6rem] mb-4">
       <Navbar />
-      <div className="pb-2 pt-2 flex flex-col gap-2 md:flex-row">
+      <div className="pb-2 flex flex-col gap-2 md:flex-row">
         <div className="w-full md:w-[25%]">
           <Temperature />
         </div>

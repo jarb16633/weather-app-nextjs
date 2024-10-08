@@ -55,3 +55,13 @@ export function evaluateAirQuality(aqi: number) {
     throw new Error("Invalid AQI value. It should be between 1 and 5.");
   }
 }
+
+export const formatNumber = (number: number) => {
+  if (number >= 1000000) {
+    return (number / 1000000).toFixed(1) + "M";
+  } else if (number >= 1000) {
+    return (number / 1000).toFixed(1) + "K";
+  } else {
+    return number;
+  }
+};

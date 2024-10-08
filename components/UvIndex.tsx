@@ -14,11 +14,9 @@ const UvIndex = (props: Props) => {
     return <Skeleton className="h-full w-full min-h-[10rem]" />;
 
   const { daily } = uvIndex;
-  // console.log(daily);
   const { uv_index_clear_sky_max, uv_index_max } = daily;
 
   const uvIndexMax = uv_index_max[0].toFixed(0);
-  const uvIndexClearSkyMax = uv_index_clear_sky_max[0];
 
   const uvIndexCategory = (uvIndex: number) => {
     if (uvIndex <= 2)
