@@ -9,6 +9,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [forecast, setForcast] = useState({});
   const [airQuality, setAirQuality] = useState({});
   const [fiveDayForecast, setFiveDayForecast] = useState({});
+  const [uvIndex, setUvIndex] = useState({});
 
   const [activeCityCoords, setActiveCityCoords] = useState([
     51, 752021, -1.257726,
@@ -47,14 +48,29 @@ export const GlobalContextProvider = ({ children }) => {
       console.error("Error fetching five day forecast data: ", error.message);
     }
   };
+
+  // fetch uv index
+  const fetchUvIndex = async () => {
+    try {
+      const res = await axios.get("api/uv");
+      // console.log("Uv Index", res.data);
+      setUvIndex(res.data);
+    } catch (error) {
+      console.log("Error fetching uv index data: ", error.message);
+    }
+  };
+
   useEffect(() => {
     fetchForcast();
     fetchAirQuality();
     fetchFiveDayForecast();
+    fetchUvIndex();
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ forecast, airQuality, fiveDayForecast }}>
+    <GlobalContext.Provider
+      value={{ forecast, airQuality, fiveDayForecast, uvIndex }}
+    >
       <GlobalContextUpdate.Provider>{children}</GlobalContextUpdate.Provider>
     </GlobalContext.Provider>
   );

@@ -41,9 +41,13 @@ const DailyForecast = (props: Props) => {
     <div className="h-full pt-2 px-4 gap-2 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
       <div className="h-full flex gap-10 overflow-hidden">
         {todayForecast.length < 1 ? (
-          <div>Loading...</div>
+          <div>
+            <h1 className="text-[3rem] line-through text-rose-500">
+              No data available
+            </h1>
+          </div>
         ) : (
-          <div className="w-full">
+          <div className="w-full pt-2 pb-2">
             <Carousel>
               <CarouselContent>
                 {todayForecast.map(
@@ -55,7 +59,7 @@ const DailyForecast = (props: Props) => {
                     return (
                       <CarouselItem
                         key={forecast.dt_txt}
-                        className="flex flex-col gap-4 cursor-grab"
+                        className="flex flex-col basis-[10rem] cursor-grab"
                       >
                         <p className="text-gray-300">
                           {moment(forecast.dt_txt).format("HH:mm")}
@@ -65,7 +69,7 @@ const DailyForecast = (props: Props) => {
                           alt="weather icon"
                           className="w-26 sm:w-30 md:w-28 lg:w-26"
                         />
-                        {kelvinToCelsius(forecast.main.temp)}°
+                        <p>{kelvinToCelsius(forecast.main.temp)}°C</p>
                       </CarouselItem>
                     );
                   }

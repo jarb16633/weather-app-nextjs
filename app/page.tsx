@@ -5,6 +5,7 @@ import FiveDayForecast from "@/components/FiveDayForcast";
 import Navbar from "@/components/Navbar";
 import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
+import UvIndex from "@/components/UvIndex";
 import Wind from "@/components/Wind";
 
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
           </div>
           <div className="col-span-1 sm:col-span-2">
             <DailyForecast />
+          </div>
+          <div className="col-span-1 flex">
+            <UvIndex />
           </div>
         </div>
       </div>
