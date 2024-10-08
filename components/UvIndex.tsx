@@ -3,6 +3,7 @@ import { useGlobalContext } from "@/app/context/globalContext";
 import React from "react";
 import { Skeleton } from "./ui/skeleton";
 import { sun } from "@/utils/Icons";
+import { UvBar } from "./UvBar";
 
 type Props = {};
 
@@ -46,14 +47,23 @@ const UvIndex = (props: Props) => {
     };
   };
 
+  const marginLeftPercentage = (uvIndexMax / 14) * 100;
+
   return (
     <div className="h-full w-full min-h-[10rem] pt-6 pb-5 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
-      <div className="top">
+      <div className="flex flex-col">
         <h2 className="flex items-center gap-2 font-medium">{sun} UV Index</h2>
-        <p className="text-2xl"></p>
+        <div className="flex flex-col gap-2 pt-2">
+          <p className="text-2xl">
+            {uvIndexMax}{" "}
+            <span className="text-sm text-gray-500">
+              {uvIndexCategory(uvIndexMax).text}
+            </span>
+          </p>
+          <UvBar max={14} value={marginLeftPercentage} className="progress" />
+        </div>
       </div>
-
-      <p></p>
+      <p className="text-sm pt-2">{uvIndexCategory(uvIndexMax).desc}</p>
     </div>
   );
 };
