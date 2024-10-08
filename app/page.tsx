@@ -3,6 +3,7 @@ import AirPollution from "@/components/AirPollution";
 import DailyForecast from "@/components/DailyForecast";
 import FiveDayForecast from "@/components/FiveDayForcast";
 import Navbar from "@/components/Navbar";
+import Population from "@/components/Population";
 import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
 import UvIndex from "@/components/UvIndex";
@@ -31,6 +32,9 @@ export default function Home() {
           </div>
           <div className="col-span-1 flex">
             <UvIndex />
+          </div>
+          <div className="col-span-1 flex">
+            <Population />
           </div>
         </div>
       </div>
