@@ -8,16 +8,17 @@ import MapBox from "@/components/MapBox";
 import Navbar from "@/components/Navbar";
 import Population from "@/components/Population";
 import Pressure from "@/components/Pressure";
-import States from "@/components/States";
+import Coords from "@/components/Coords";
 import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
 import UvIndex from "@/components/UvIndex";
 import Visibility from "@/components/Visibility";
 import Wind from "@/components/Wind";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="mx-[1rem] lg:mx-[1rem] xl:mx-[2rem] 2xl:mx-[6rem] mb-4">
+    <main className="mx-[1rem] lg:mx-[1rem] xl:mx-[2rem] 2xl:mx-[6rem]">
       <Navbar />
       <div className="pb-2 flex flex-col gap-2 md:flex-row">
         <div className="w-full md:w-[25%]">
@@ -61,10 +62,11 @@ export default function Home() {
             <MapBox />
           </div>
           <div className="states flex flex-col col-span-1 row-span-4 gap-3 flex-1">
-            <States />
+            <Coords />
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
