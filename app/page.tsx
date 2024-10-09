@@ -6,9 +6,11 @@ import FiveDayForecast from "@/components/FiveDayForcast";
 import Humidity from "@/components/Humidity";
 import Navbar from "@/components/Navbar";
 import Population from "@/components/Population";
+import Pressure from "@/components/Pressure";
 import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
 import UvIndex from "@/components/UvIndex";
+import Visibility from "@/components/Visibility";
 import Wind from "@/components/Wind";
 
 export default function Home() {
@@ -50,8 +52,8 @@ export default function Home() {
             <Humidity />
           </div>
           <div className="col-span-2 flex gap-2">
-            <UvIndex />
-            <UvIndex />
+            <Visibility />
+            <Pressure />
           </div>
         </div>
       </div>
