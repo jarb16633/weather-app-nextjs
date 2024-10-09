@@ -32,7 +32,7 @@ const Wind = (props: Props) => {
             <Image
               src="/compass_arrow.svg"
               alt="compass"
-              className="absolute top-0 left-[43%] transition-all duration-500 ease-in-out dark:invert sm:left-[45%]"
+              className="absolute top-0 left-[40%] transition-all duration-500 ease-in-out dark:invert sm:left-[40%]"
               style={{
                 transform: `rotate(${windDirection}deg) translate(-50%)`,
                 height: "100%",

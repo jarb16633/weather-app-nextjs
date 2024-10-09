@@ -49,7 +49,7 @@ const FiveDayForecast = (props: Props) => {
   }
 
   return (
-    <div className="pt-6 pb-5 px-4 flex-1 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
+    <div className="pt-6 pb-5 px-4 border rounded-xl flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none">
       <div>
         <h2 className="flex items-center gap-2 font-medium">
           {calender} 5-Day Forecast for {city.name}
